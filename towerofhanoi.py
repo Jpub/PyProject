@@ -44,7 +44,7 @@ More info at https://en.wikipedia.org/wiki/Tower_of_Hanoi
 
 
 def askForPlayerMove(towers):
-    """Asks the player for a move. Returns (fromTower, toTower)."""
+    """플레이어에게 이동을 요청하고 (fromTower, toTower)를 반환한다."""
 
     while True:  # 유효한 움직임을 입력할 때까지 플레이어게 계속 요청한다.
         print('Enter the letters of "from" and "to" towers, or QUIT.')
@@ -79,7 +79,7 @@ def askForPlayerMove(towers):
 
 
 def displayTowers(towers):
-    """Display the current state."""
+    """현재 상태를 표시한다."""
 
     # 세 개의 타워를 표시한다:
     for level in range(TOTAL_DISKS, -1, -1):
@@ -96,7 +96,7 @@ def displayTowers(towers):
 
 
 def displayDisk(width):
-    """Display a disk of the given width. A width of 0 means no disk."""
+    """주어진 너비의 디스크를 표시한다. 너비가 0이면 디스크가 없다는 의미다."""
     emptySpace = ' ' * (TOTAL_DISKS - width)
 
     if width == 0:

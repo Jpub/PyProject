@@ -94,13 +94,13 @@ def main():
 
 
 def getRandomColor():
-    """Return a string of a random color."""
+    """임의 색상의 문자열을 반환한다."""
     return random.choice(('black', 'red', 'green', 'yellow', 'blue',
                           'purple', 'cyan', 'white'))
 
 
 def generateFish():
-    """Return a dictionary that represents a fish."""
+    """물고기를 나타내는 딕셔너리를 반환한다."""
     fishType = random.choice(FISH_TYPES)
 
     # 물고기 텍스트의 각 문자에 대한 색을 설정한다:
@@ -135,7 +135,7 @@ def generateFish():
 
 
 def simulateAquarium():
-    """Simulate the movements in the aquarium for one step."""
+    """한 단계에 대한 수족관의 움직임을 시뮬레이션한다."""
     global FISHES, BUBBLERS, BUBBLES, KELP, STEP
 
     # 한 단계 물고기의 움직임을 시뮬레이션한다:
@@ -216,7 +216,7 @@ def simulateAquarium():
 
 
 def drawAquarium():
-    """Draw the aquarium on the screen."""
+    """화면에 수족관을 그린다."""
     global FISHES, BUBBLERS, BUBBLES, KELP, STEP
 
     # 종료 메시지 그리기

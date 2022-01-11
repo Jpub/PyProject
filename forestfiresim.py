@@ -76,7 +76,7 @@ def main():
 
 
 def createNewForest():
-    """Returns a dictionary for a new forest data structure."""
+    """새로운 숲 데이터 구조에 대한 딕셔너리를 반환한다."""
     forest = {'width': WIDTH, 'height': HEIGHT}
     for x in range(WIDTH):
         for y in range(HEIGHT):
@@ -88,7 +88,7 @@ def createNewForest():
 
 
 def displayForest(forest):
-    """Display the forest data structure on the screen."""
+    """숲 데이터 구조를 화면에 표시한다."""
     bext.goto(0, 0)
     for y in range(forest['height']):
         for x in range(forest['width']):

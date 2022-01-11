@@ -71,7 +71,7 @@ def main():
 
 class Duckling:
     def __init__(self):
-        """Create a new duckling with random body features."""
+        """임의의 신체 특징들을 가진 새로운 오리를 생성한다."""
         self.direction = random.choice([LEFT, RIGHT])
         self.body = random.choice([CHUBBY, VERY_CHUBBY])
         self.mouth = random.choice([OPEN, CLOSED])
@@ -86,7 +86,7 @@ class Duckling:
         self.partToDisplayNext = HEAD
 
     def getHeadStr(self):
-        """Returns the string of the duckling's head."""
+        """오리 머리에 대한 문자열을 반환한다."""
         headStr = ''
         if self.direction == LEFT:
             # 입을 추가한다:
@@ -138,7 +138,7 @@ class Duckling:
         return headStr
 
     def getBodyStr(self):
-        """Returns the string of the duckling's body."""
+        """오리 몸통에 대한 문자열을 반환한다."""
         bodyStr = '('  # 몸의 왼쪽을 추가한다.
         if self.direction == LEFT:
             # 몸통 내부 공간을 추가한다:
@@ -180,16 +180,16 @@ class Duckling:
         return bodyStr
 
     def getFeetStr(self):
-        """Returns the string of the duckling's feet."""
+        """오리 발에 대한 문자열을 반환한다."""
         if self.body == CHUBBY:
             return ' ^^  '
         elif self.body == VERY_CHUBBY:
             return ' ^ ^ '
 
     def getNextBodyPart(self):
-        """Calls the appropriate display method for the next body
-        part that needs to be displayed. Sets partToDisplayNext to
-        None when finished."""
+        """표시해야 하는 다음 몸통에 대한 
+        메서드를 호출한다. 그런 다음,
+        partToDisplayNext에 None을 설정한다."""
         if self.partToDisplayNext == HEAD:
             self.partToDisplayNext = BODY
             return self.getHeadStr()

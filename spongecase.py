@@ -12,7 +12,7 @@ except ImportError:
 
 
 def main():
-    """Run the Spongecase program."""
+    """스폰지 표기법 프로그램을 실행한다."""
     print('''sPoNgEtExT, bY aL sWeIGaRt Al@iNvEnTwItHpYtHoN.cOm
 
 eNtEr YoUr MeSsAgE:''')
@@ -28,7 +28,7 @@ eNtEr YoUr MeSsAgE:''')
 
 
 def englishToSpongecase(message):
-    """Return the spongecase form of the given string."""
+    """주어진 문자열에 대한 스폰지 표기법 형태를 반환한다."""
     spongecase = ''
     useUpper = False
 

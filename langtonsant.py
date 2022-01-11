@@ -120,9 +120,9 @@ def main():
 
 
 def displayBoard(board, ants, changedTiles):
-    """Displays the board and ants on the screen. The changedTiles
-    argument is a list of (x, y) tuples for tiles on the screen that
-    have changed and need to be redrawn."""
+    """화면에 보드와 개미를 표시한다. 
+    changedTiles 인수는 변경되어 다시 그려야 하는 화면상의 타일에 대한
+    (x, y) 튜플 리스트다."""
 
     # 보드 데이터 구조 그리기:
     for x, y in changedTiles:

@@ -7,8 +7,8 @@ import random, time
 
 
 def slowSpacePrint(text, interval=0.1):
-    """Slowly display text with spaces in between each letter and
-    lowercase letter i's."""
+    """각 문자와 소문자 i 사이에
+    공백이 있는 텍스트를 천천히 표시한다."""
     for character in text:
         if character == 'I':
             # 대문자 I를 소문자로 표시한다:

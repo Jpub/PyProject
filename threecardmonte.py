@@ -26,8 +26,8 @@ RIGHT  = 2
 
 
 def displayCards(cards):
-    """Display the cards in "cards", which is a list of (rank, suit)
-    tuples."""
+    """(rank, suit) 튜플의 리스트인 "cards"에 있는
+    카드들을 표시한다."""
     rows = ['', '', '', '', '']  # 표시할 텍스트를 저장한다.
 
     for i, card in enumerate(cards):
@@ -44,7 +44,7 @@ def displayCards(cards):
 
 
 def getRandomCard():
-    """Returns a random card that is NOT the Queen of Hearts."""
+    """퀸 하트가 아닌 임의의 카드를 반환한다."""
     while True:  # 하트 퀸이 아닌 카드를 갖을 때까지 카드를 만든다.
         rank = random.choice(list('23456789JQKA') + ['10'])
         suit = random.choice([HEARTS, DIAMONDS, SPADES, CLUBS])
@@ -67,7 +67,7 @@ print('Here are the cards:')
 displayCards(cards)
 input('Press Enter when you are ready to begin...')
 
-# 교체에 대해 출력한다:
+# 교체하는 과정에 대해 출력한다:
 for i in range(NUM_SWAPS):
     swap = random.choice(['l-m', 'm-r', 'l-r', 'm-l', 'r-m', 'r-l'])
 

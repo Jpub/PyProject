@@ -36,8 +36,8 @@ class SudokuGrid:
         self.moves = []  # 실행 취소 기능을 위해 이동에 대해 추적한다.
 
     def resetGrid(self):
-        """Reset the state of the grid, tracked by self.grid, to the
-        state in self.originalSetup."""
+        """self.grid로 추적한 그리드의 상태를
+        self.originalSetup 상태로 재설정한다."""
         for x in range(1, GRID_LENGTH + 1):
             for y in range(1, GRID_LENGTH + 1):
                 self.grid[(x, y)] = EMPTY_SPACE
@@ -52,8 +52,8 @@ class SudokuGrid:
             y += 1
 
     def makeMove(self, column, row, number):
-        """Place the number at the column (a letter from A to I) and row
-        (an integer from 1 to 9) on the grid."""
+        """그리드의 열(A에서 I까지의 문자)과 행(1에서 9까지의 정수)에
+        숫자를 배치한다."""
         x = 'ABCDEFGHI'.find(column)  # 이것을 정수로 변환한다.
         y = int(row) - 1
 
@@ -68,8 +68,8 @@ class SudokuGrid:
         return True
 
     def undo(self):
-        """Set the current grid state to the previous state in the
-        self.moves list."""
+        """현재 그리드 상태를
+        self.moves 리스트에 있는 이전 상태로 설정한다."""
         if self.moves == []:
             return  # self.moves에 상태가 없으므로 아무것도 하지 않는다.
 
@@ -82,7 +82,7 @@ class SudokuGrid:
             self.grid = copy.copy(self.moves[-1])
 
     def display(self):
-        """Display the current state of the grid on the screen."""
+        """화면에 그리드의 현재 상태를 표시한다."""
         print('   A B C   D E F   G H I')  # 열에 대한 레이블을 표시한다.
         for y in range(GRID_LENGTH):
             for x in range(GRID_LENGTH):
@@ -101,11 +101,11 @@ class SudokuGrid:
                 print('   ------+-------+------')
 
     def _isCompleteSetOfNumbers(self, numbers):
-        """Return True if numbers contains the digits 1 through 9."""
+        """숫자들이 1부터 9까지의 숫자를 포함한다면 True를 반환한다."""
         return sorted(numbers) == list('123456789')
 
     def isSolved(self):
-        """Returns True if the current grid is in a solved state."""
+        """현재 그리드가 완성된 상태라면 True를 반환한다."""
         # 각 행을 확인한다:
         for row in range(GRID_LENGTH):
             rowNumbers = []

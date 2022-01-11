@@ -74,8 +74,8 @@ def main():
 
 
 def runHourglassSimulation(allSand):
-    """Keep running the sand falling simulation until the sand stops
-    moving."""
+    """모래가 더 이상 움직이지 않을 때까지
+    시뮬레이션을 계속 실행한다."""
     while True:  # 모래가 다 떨어질 때까지 계속 반복한다.
         random.shuffle(allSand)  # 무작위로 섞는다.
 

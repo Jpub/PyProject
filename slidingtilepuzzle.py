@@ -32,13 +32,13 @@ def main():
 
 
 def getNewBoard():
-    """Return a list of lists that represents a new tile puzzle."""
+    """새 타일 퍼즐을 나타내는 리스트의 리스트를 반환한다."""
     return [['1 ', '5 ', '9 ', '13'], ['2 ', '6 ', '10', '14'],
             ['3 ', '7 ', '11', '15'], ['4 ', '8 ', '12', BLANK]]
 
 
 def displayBoard(board):
-    """Display the given board on the screen."""
+    """주어진 보드를 화면에 표시한다."""
     labels = [board[0][0], board[1][0], board[2][0], board[3][0],
               board[0][1], board[1][1], board[2][1], board[3][1],
               board[0][2], board[1][2], board[2][2], board[3][2],
@@ -66,7 +66,7 @@ def displayBoard(board):
 
 
 def findBlankSpace(board):
-    """Return an (x, y) tuple of the blank space's location."""
+    """빈 공간에 대한 위치의 (x, y) 튜플을 반환한다."""
     for x in range(4):
         for y in range(4):
             if board[x][y] == '  ':
@@ -74,7 +74,7 @@ def findBlankSpace(board):
 
 
 def askForPlayerMove(board):
-    """Let the player select a tile to slide."""
+    """플레이어가 슬라이드할 타일을 선택하게 한다."""
     blankx, blanky = findBlankSpace(board)
 
     w = 'W' if blanky != 3 else ' '
@@ -94,7 +94,7 @@ def askForPlayerMove(board):
 
 
 def makeMove(board, move):
-    """Carry out the given move on the given board."""
+    """주어진 보드에서 주어진 이동을 수행한다."""
     # 주의: 이 함수는 이동이 유효하다고 가정한다.
     bx, by = findBlankSpace(board)
 
@@ -109,7 +109,7 @@ def makeMove(board, move):
 
 
 def makeRandomMove(board):
-    """Perform a slide in a random direction."""
+    """임의의 방향으로 슬라이드를 실행한다."""
     blankx, blanky = findBlankSpace(board)
     validMoves = []
     if blanky != 3:
@@ -125,7 +125,7 @@ def makeRandomMove(board):
 
 
 def getNewPuzzle(moves=200):
-    """Get a new puzzle by making random slides from a solved state."""
+    """완성된 상태에서 무작위로 슬라이드하여 새로운 퍼즐을 얻는다."""
     board = getNewBoard()
 
     for i in range(moves):

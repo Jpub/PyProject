@@ -71,8 +71,8 @@ More info at https://en.wikipedia.org/wiki/Mancala
 
 
 def getNewBoard():
-    """Return a dictionary representing a Mancala board in the starting
-    state: 4 seeds in each pit and 0 in the stores."""
+    """시작 상태의 만칼라 보드(각 구멍에 4개의 씨앗이 있고 상점에는 씨앗이 없는)를 나타내는 
+    딕셔너리를 반환한다."""
 
     # 신택틱 슈거(Syntactic sugar) - 더 짧은 변수명 사용:
     s = STARTING_NUMBER_OF_SEEDS
@@ -84,8 +84,8 @@ def getNewBoard():
 
 
 def displayBoard(board):
-    """Displays the game board as ASCII-art based on the board
-    dictionary."""
+    """보드 딕셔너리에 기반한 아스키 아트로
+    게임 보드를 표시한다."""
 
     seedAmounts = []
     # 이 'GHIJKL21ABCDEF' 문자열은
@@ -109,9 +109,9 @@ E      |      |      |      |      |      |      |      E
 
 
 def askForPlayerMove(playerTurn, board):
-    """Asks the player which pit on their side of the board they
-    select to sow seeds from. Returns the uppercase letter label of the
-    selected pit as a string."""
+    """플레이어에게 어느 쪽에 씨앗을 뿌릴 것인지 묻는다.
+    선택한 구멍의 대문자 레이블을
+    문자열로 반환한다."""
 
     while True:  # 유효한 입력을 할 때까지 계속 플레이어게 묻는다.
         # 플레이어 쪽 구멍을 선택하도록 요청한다:
@@ -139,9 +139,9 @@ def askForPlayerMove(playerTurn, board):
 
 
 def makeMove(board, playerTurn, pit):
-    """Modify the board data structure so that the player 1 or 2 in
-    turn selected pit as their pit to sow seeds from. Returns either
-    '1' or '2' for whose turn it is next."""
+    """플레이어 1 또는 2가 차례로 씨앗을 뿌릴 구멍을 선택하도록
+    보드 데이터 구조를 수정한다.
+    다음 차례인 '1' 또는 '2'를 반환한다."""
 
     seedsToSow = board[pit]  # 선택된 구멍에서 씨앗의 수를 가져온다.
     board[pit] = 0  # 선택된 구멍을 비운다.
@@ -178,10 +178,10 @@ def makeMove(board, playerTurn, pit):
 
 
 def checkForWinner(board):
-    """Looks at board and returns either '1' or '2' if there is a
-    winner or 'tie' or 'no winner' if there isn't. The game ends when a
-    player's pits are all empty; the other player claims the remaining
-    seeds for their store. The winner is whoever has the most seeds."""
+    """보드를 확인하고 승자가 있으면 '1' 또는 '2'를 반환하고,
+    없으면 'tie' 또는 'no winner'를 반환한다.
+    플레이어의 구멍이 모두 비어 있으면 게임이 종료되고, 자신의 상점에 남은 씨앗을 가져온다.
+    가장 많은 씨앗을 가진 사람이 승리한다."""
 
     player1Total = board['A'] + board['B'] + board['C']
     player1Total += board['D'] + board['E'] + board['F']

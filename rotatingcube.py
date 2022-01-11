@@ -35,10 +35,10 @@ Z = 2
 
 
 def line(x1, y1, x2, y2):
-    """Returns a list of points in a line between the given points.
+    """주어진 점들 중, 라인에 있는 점들의 리스트를 반환한다.
 
-    Uses the Bresenham line algorithm. More info at:
-    https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm"""
+    브레슨햄 라인 알고리즘을 사용한다.
+    자세한 내용은 https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm을 참고하자."""
     points = []  # 라인의 위치를 담는다.
     # "Steep"은 라인이 45도보다 크거나
     # -45도보다 작다는 의미다:
@@ -102,11 +102,11 @@ def line(x1, y1, x2, y2):
 
 
 def rotatePoint(x, y, z, ax, ay, az):
-    """Returns an (x, y, z) tuple of the x, y, z arguments rotated.
+    """회전된 x, y, z 인수의 (x, y, z) 튜플을 반환한다.
 
-    The rotation happens around the 0, 0, 0 origin by angles
-    ax, ay, az (in radians).
-        Directions of each axis:
+    회전은 ax, ay, az(라디언)에 의해
+    0, 0, 0 원점을 중심으로 회전한다.
+        각 축의 방향:
          -y
           |
           +-- +x
@@ -135,15 +135,15 @@ def rotatePoint(x, y, z, ax, ay, az):
 
 
 def adjustPoint(point):
-    """Adjusts the 3D XYZ point to a 2D XY point fit for displaying on
-    the screen. This resizes this 2D point by a scale of SCALEX and
-    SCALEY, then moves the point by TRANSLATEX and TRANSLATEY."""
+    """화면에 표시하기 위해 3차원 XYZ 포인트를 2차원 포인트로 조정한다.
+    2차원 포인트의 크기를 SCALEX와 SCALEY 만큼 조정한 다음,
+    TRANSLATEX와 TRANSLATEY 만큼 포인트를 이동한다."""
     return (int(point[X] * SCALEX + TRANSLATEX),
             int(point[Y] * SCALEY + TRANSLATEY))
 
 
-"""CUBE_CORNERS stores the XYZ coordinates of the corners of a cube.
-The indexes for each corner in CUBE_CORNERS are marked in this diagram:
+"""CUBE_CORNERS는 정육면체 모서리의 XYZ 좌표를 저장한다.
+CUBE_CORNERS의 각 모서리에 대한 인덱스는 다음 다이어그램에 표시된 것과 같다:
       0---1
      /|  /|
     2---3 |

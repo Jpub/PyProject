@@ -121,7 +121,7 @@ def main():
 
 
 def getBet(maxBet):
-    """Ask the player how much they want to bet for this round."""
+    """플레이어에게 이번 판에 얼마를 걸지 묻는다."""
     while True:  # 유효한 값을 입력할 때까지 계속 질문한다.
         print('How much do you bet? (1-{}, or QUIT)'.format(maxBet))
         bet = input('> ').upper().strip()
@@ -138,7 +138,7 @@ def getBet(maxBet):
 
 
 def getDeck():
-    """Return a list of (rank, suit) tuples for all 52 cards."""
+    """52개의 모든 카드에 대한 (rank, suit) 튜플 리스트를 반환한다."""
     deck = []
     for suit in (HEARTS, DIAMONDS, SPADES, CLUBS):
         for rank in range(2, 11):
@@ -150,8 +150,8 @@ def getDeck():
 
 
 def displayHands(playerHand, dealerHand, showDealerHand):
-    """Show the player's and dealer's cards. Hide the dealer's first
-    card if showDealerHand is False."""
+    """플레이어와 딜러의 카드를 보여준다.
+    만약에 showDealerHand가 False이면, 딜러의 첫 번째 카드를 가린다."""
     print()
     if showDealerHand:
         print('DEALER:', getHandValue(dealerHand))
@@ -167,8 +167,8 @@ def displayHands(playerHand, dealerHand, showDealerHand):
 
 
 def getHandValue(cards):
-    """Returns the value of the cards. Face cards are worth 10, aces are
-    worth 11 or 1 (this function picks the most suitable ace value)."""
+    """카드의 값을 반환한다. 얼굴이 있는 카드들은 모두 10이며,
+    에이스는 11 또는 1이다(이 함수는 최적의 에이스 값을 선택한다)."""
     value = 0
     numberOfAces = 0
 
@@ -193,11 +193,11 @@ def getHandValue(cards):
 
 
 def displayCards(cards):
-    """Display all the cards in the cards list."""
-    rows = ['', '', '', '', '']  # 각 행에 표시될 텍스트 변수.
+    """카드 리스트에 있는 모든 카드를 표시한다."""
+    rows = ['', '', '', '', '']  # 각 행에 표시될 텍스트 변수
 
     for i, card in enumerate(cards):
-        rows[0] += ' ___  '  # 카드의 상단 라인 출력.
+        rows[0] += ' ___  '  # 카드의 상단 라인 출력
         if card == BACKSIDE:
             # 카드의 뒷면 출력:
             rows[1] += '|## | '
@@ -216,8 +216,8 @@ def displayCards(cards):
 
 
 def getMove(playerHand, money):
-    """Asks the player for their move, and returns 'H' for hit, 'S' for
-    stand, and 'D' for double down."""
+    """플레이어 차례에서 플레이어 선택을 묻는다.
+    히트인 'H', 스탠드인 'S', 더블 다운인 'D'를 반환한다."""
     while True:  # 플레이어가 올바른 입력을 할 때까지 계속 반복한다.
         # 플레이어가 선택할 수 있는 게 무엇인지 결정한다:
         moves = ['(H)it', '(S)tand']

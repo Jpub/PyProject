@@ -40,21 +40,21 @@ CANVAS_WIDTH -= 1
 # 명령어에 대한 정보를 표시하기 위해 하단 몇 줄을 띄어 놓는다.
 CANVAS_HEIGHT -= 5
 
-"""The keys for canvas will be (x, y) integer tuples for the coordinate,
-and the value is a set of letters W, A, S, D that tell what kind of line
-should be drawn."""
+"""캔버스에 대한 키는 좌표를 나타내는 (x, y) 정수 튜플이며, 
+값은 어떤 종류의 선을 그려야 하는지 알려주는
+W, A, S,D 문자들의 집합이다."""
 canvas = {}
 cursorX = 0
 cursorY = 0
 
 
 def getCanvasString(canvasData, cx, cy):
-    """Returns a multiline string of the line drawn in canvasData."""
+    """canvasData에 그려진 라인의 여러 줄 문자열을 반환한다."""
     canvasStr = ''
 
-    """canvasData is a dictionary with (x, y) tuple keys and values that
-    are sets of 'W', 'A', 'S', and/or 'D' strings to show which
-    directions the lines are drawn at each xy point."""
+    """canvasData는 'W', 'A', 'S' 그리고/
+    ar또는 'D' 문자열들의 집합인 (x, y) 튜플 키와 값이 포함된 딕셔너리로
+    di각각의 선이 그려지는 방향을 타나낸다."""
     for rowNum in range(CANVAS_HEIGHT):
         for columnNum in range(CANVAS_WIDTH):
             if columnNum == cx and rowNum == cy:

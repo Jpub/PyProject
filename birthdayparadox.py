@@ -8,14 +8,14 @@ import datetime, random
 
 
 def getBirthdays(numberOfBirthdays):
-    """Returns a list of number random date objects for birthdays."""
+    """생일에 대한 임의의 날짜 객체들의 리스트를 반환한다."""
     birthdays = []
     for i in range(numberOfBirthdays):
-        # 여기서 연도는 중요하지 않기 때문에
-        # 모든 생일을 같은 연도로 한다.
+        # 여기서 년도는 중요하지 않기 때문에
+        # 모든 생일을 같은 년도로 한다.
         startOfYear = datetime.date(2001, 1, 1)
 
-        # 그 연도에서 임의의 날짜를 얻는다:
+        # 그 년도에서 임의의 날짜를 얻는다:
         randomNumberOfDays = datetime.timedelta(random.randint(0, 364))
         birthday = startOfYear + randomNumberOfDays
         birthdays.append(birthday)
@@ -23,10 +23,10 @@ def getBirthdays(numberOfBirthdays):
 
 
 def getMatch(birthdays):
-    """Returns the date object of a birthday that occurs more than once
-    in the birthdays list."""
+    """생일 리스트에서 중복되는 생일 날짜인 
+    객체를 반환한다."""
     if len(birthdays) == len(set(birthdays)):
-        return None  # 모든 생일이 서로 다르다면, None을 반환한다.
+        return None  # 모든 생일이 서로 다르다면 None을 반환한다.
 
     # 모든 생일을 각각 다른 생일과 비교한다:
     for a, birthdayA in enumerate(birthdays):

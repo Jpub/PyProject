@@ -18,10 +18,10 @@ WEST = 'WEST'
 
 
 def wallStrToWallDict(wallStr):
-    """Takes a string representation of a wall drawing (like those in
-    ALL_OPEN or CLOSED) and returns a representation in a dictionary
-    with (x, y) tuples as keys and single-character strings of the
-    character to draw at that x, y location."""
+    """벽 그림을 나타내는 문자열(ALL_OPEN 또는 CLOSED 등)을 받아서
+    (x, y) 튜플을 키로 사용하고,
+    해당 위치에 그릴 아스키 아트에 대한 단일 문자열을 사용하는
+    딕셔너리를 반환한다."""
     wallDict = {}
     height = 0
     width = 0
@@ -131,8 +131,8 @@ _/...
 ..\..'''.strip()) # 좌표 12, 0에 붙인다.
 
 def displayWallDict(wallDict):
-    """Display a wall dictionary, as returned by wallStrToWallDict(), on
-    the screen."""
+    """wallStrToWallDict()에 의해 반환된 벽 딕셔너리를
+    화면에 표시한다."""
     print(BLOCK * (wallDict['width'] + 2))
     for y in range(wallDict['height']):
         print(BLOCK, end='')
@@ -146,8 +146,8 @@ def displayWallDict(wallDict):
 
 
 def pasteWallDict(srcWallDict, dstWallDict, left, top):
-    """Copy the wall representation dictionary in srcWallDict on top of
-    the one in dstWallDict, offset to the position given by left, top."""
+    """벽을 나타내는 딕셔너리 srcWallDict에 left와 top에 지정된 위치만큼
+    오프셋을 적용한 dstWallDict를 만든다."""
     dstWallDict = copy.copy(dstWallDict)
     for x in range(srcWallDict['width']):
         for y in range(srcWallDict['height']):
@@ -156,9 +156,9 @@ def pasteWallDict(srcWallDict, dstWallDict, left, top):
 
 
 def makeWallDict(maze, playerx, playery, playerDirection, exitx, exity):
-    """From the player's position and direction in the maze (which has
-    an exit at exitx, exity), create the wall representation dictionary
-    by pasting wall dictionaries on top of ALL_OPEN, then return it."""
+    """미로에서 플레이어의 위치와 방향
+    (exitx, exity에 출구가 있음)을 가지고,
+    벽을 나타내는 딕셔너리를 생성하여 반환한다."""
 
     # A-F '섹션'(플레이어의 방향에 대한)은
     # 우리가 만들고 있는 벽을 표현하는 딕셔너리 위에 붙여넣어야 하는지 확인하기 위해

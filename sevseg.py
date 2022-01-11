@@ -5,7 +5,7 @@ More info at https://en.wikipedia.org/wiki/Seven-segment_display
 This code is available at https://nostarch.com/big-book-small-python-programming
 Tags: short, module"""
 
-"""A labeled seven-segment display, with each segment labeled A to G:
+"""A부터 G까지 레이블이 지정되어 있는 7 세그먼트 디스플레이:
  __A__
 |     |    Each digit in a seven-segment display:
 F     B     __       __   __        __   __  __   __   __
@@ -16,8 +16,8 @@ E     C
 
 
 def getSevSegStr(number, minWidth=0):
-    """Return a seven-segment display string of number. The returned
-    string will be padded with zeros if it is smaller than minWidth."""
+    """숫자에 대한 7 세그먼트 디스플레이 문자열을 반환한다.
+    반환된 문자열이 minWidth보다 작으면 0으로 채워진다."""
 
     # int 또는 float인 경우, 숫자를 문자열로 변환한다:
     number = str(number).zfill(minWidth)

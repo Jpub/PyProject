@@ -86,7 +86,7 @@ entire board the same color/shape.''')
 
 
 def getNewBoard():
-    """Return a dictionary of a new Flood It board."""
+    """새로운 게임에 대한 딕셔너리를 반환한다."""
 
     # 키는 (x, y) 튜플이고, 값은 그 위치의 타일이다.
     board = {}
@@ -106,7 +106,7 @@ def getNewBoard():
 
 
 def displayBoard(board, displayMode):
-    """Display the board on the screen."""
+    """화면에 보드를 표시한다."""
     bext.fg('white')
     # 게임의 상단 면을 표시한다:
     print(DOWNRIGHT + (LEFTRIGHT * BOARD_WIDTH) + DOWNLEFT)
@@ -134,7 +134,7 @@ def displayBoard(board, displayMode):
 
 
 def askForPlayerMove(displayMode):
-    """Let the player select a color to paint the upper left tile."""
+    """플레이어가 왼쪽 상단 타일을 칠할 색상을 선택하게 한다."""
     while True:
         bext.fg('white')
         print('Choose one of ', end='')
@@ -182,8 +182,8 @@ def askForPlayerMove(displayMode):
 
 
 def changeTile(tileType, board, x, y, charToChange=None):
-    """Change the color/shape of a tile using the recursive flood fill
-    algorithm."""
+    """재귀적 채우기 알고리즘을 사용하여 
+    타일의 색상/모양을 변경한다."""
     if x == 0 and y == 0:
         charToChange = board[(x, y)]
         if tileType == charToChange:
@@ -206,7 +206,7 @@ def changeTile(tileType, board, x, y, charToChange=None):
 
 
 def hasWon(board):
-    """Return True if the entire board is one color/shape."""
+    """보드 전체가 하나의 색상/모양이 되면 True를 반환한다."""
     tile = board[(0, 0)]
 
     for x in range(BOARD_WIDTH):

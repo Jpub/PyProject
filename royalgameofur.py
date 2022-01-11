@@ -176,10 +176,10 @@ the middle flower space are safe and cannot be landed on.''')
 
 def getNewBoard():
     """
-    Returns a dictionary that represents the state of the board. The
-    keys are strings of the space labels, the values are X_PLAYER,
-    O_PLAYER, or EMPTY. There are also counters for how many tokens are
-    at the home and goal of both players.
+    보드의 상태를 나타내는 딕셔너리를 반환한다.
+    키는 공백 레이블의 문자열이고,
+    값은 X_PLAYER, O_PLAYER, 또는 EMPTY이다.
+    또한, 두 플레이어의 홈과 도착점에 얼마나 많은 토큰이 있는지에 대한 카운터도 있다.
     """
     board = {X_HOME: 7, X_GOAL: 0, O_HOME: 7, O_GOAL: 0}
     # 게임을 시작하기 위해 각 공간을 비운다:
@@ -189,7 +189,7 @@ def getNewBoard():
 
 
 def displayBoard(board):
-    """Display the board on the screen."""
+    """화면에 보드를 표시한다."""
     # 줄바꿈을 많이 출력하여 화면을 깨끗이 정리해,
     # 이전의 보드가 더 이상 보이지 않게 한다.
     print('\n' * 60)

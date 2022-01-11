@@ -57,7 +57,7 @@ clues would be Fermi Pico.'''.format(NUM_DIGITS))
 
 
 def getSecretNum():
-    """Returns a string made up of NUM_DIGITS unique random digits."""
+    """NUM_DIGITS개의 임의 숫자로 구성된 문자열을 반환한다."""
     numbers = list('0123456789')  # 0부터 9까지의 숫자 리스트를 생성한다.
     random.shuffle(numbers)  # 무작위 순서가 되도록 섞는다.
 
@@ -69,8 +69,8 @@ def getSecretNum():
 
 
 def getClues(guess, secretNum):
-    """Returns a string with the pico, fermi, bagels clues for a guess
-    and secret number pair."""
+    """비밀번호에 대한 단서인 pico, fermi,
+     bagels로 구성된 문자열을 반환한다."""
     if guess == secretNum:
         return 'You got it!'
 

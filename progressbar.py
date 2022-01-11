@@ -30,8 +30,8 @@ def main():
 
 
 def getProgressBar(progress, total, barWidth=40):
-    """Returns a string that represents a progress bar that has barWidth
-    bars and has progressed progress amount out of a total amount."""
+    """barWidth 바가 있고 총합에 대해 진행률이 표시되는
+    프로그레스 바를 나타내는 문자열을 반환한다."""
 
     progressBar = ''  # 이 변수의 값은 문자열이다.
     progressBar += '['  # 프로그레스 바의 왼쪽 끝을 만든다.

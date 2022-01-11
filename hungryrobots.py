@@ -60,11 +60,11 @@ through the corners of two diagonal walls!
 
 
 def getNewBoard():
-    """Returns a dictionary that represents the board. The keys are
-    (x, y) tuples of integer indexes for board positions, the values are
-    WALL, EMPTY_SPACE, or DEAD_ROBOT. The dictionary also has the key
-    'teleports' for the number of teleports the player has left.
-    The living robots are stored separately from the board dictionary."""
+    """보드를 나타내는 딕셔너리를 반환한다.
+    키는 보드 위치에 대한 정수 인덱스의 (x, y) 튜플이고,
+    값은 WALL, EMPTY_SPACE 또는 DEAD_ROBOT이다.
+    또한, 딕셔너리는 플레이어가 순간 이동을 할 수 있는 남은 횟수에 대한 'teleports'라는 키를 가지고 있다.
+    살아있는 로봇은 보드 딕셔너리와 분리해서 저장된다."""
     board = {'teleports': NUM_TELEPORTS}
 
     # 빈 보드 생성하기:
@@ -93,7 +93,7 @@ def getNewBoard():
 
 
 def getRandomEmptySpace(board, robots):
-    """Return a (x, y) integer tuple of an empty space on the board."""
+    """보드의 빈 공간에 대한 (x, y) 정수 튜플을 반환한다."""
     while True:
         randomX = random.randint(1, WIDTH - 2)
         randomY = random.randint(1, HEIGHT - 2)
@@ -103,14 +103,14 @@ def getRandomEmptySpace(board, robots):
 
 
 def isEmpty(x, y, board, robots):
-    """Return True if the (x, y) is empty on the board and there's also
-    no robot there."""
+    """보드에 (x, y)가 비어 있고 거기에 로봇도 없으면
+    True를 반환한다."""
     return board[(x, y)] == EMPTY_SPACE and (x, y) not in robots
 
 
 def addRobots(board):
-    """Add NUM_ROBOTS number of robots to empty spaces on the board and
-    return a list of these (x, y) spaces where robots are now located."""
+    """보드의 빈 공간에 NUM_ROBOTS개의 로봇을 추가하고
+    로봇의 현재 위치인 (x, y) 공간의 리스트를 반환한다."""
     robots = []
     for i in range(NUM_ROBOTS):
         x, y = getRandomEmptySpace(board, robots)
@@ -119,7 +119,7 @@ def addRobots(board):
 
 
 def displayBoard(board, robots, playerPosition):
-    """Display the board, robots, and player on the screen."""
+    """보드, 로봇, 그리고 플레이어를 화면에 표시한다."""
     # 보드의 모든 공간에 대해 루프를 돈다:
     for y in range(HEIGHT):
         for x in range(WIDTH):
@@ -138,8 +138,8 @@ def displayBoard(board, robots, playerPosition):
 
 
 def askForPlayerMove(board, robots, playerPosition):
-    """Returns the (x, y) integer tuple of the place the player moves
-    next, given their current location and the walls of the board."""
+    """로봇들의 현재 위치와 보드의 벽이 주어지면
+    플레이어가 다음에 이동할 수 있는 장소의 (x, y) 정수 튜플을 반환한다."""
     playerX, playerY = playerPosition
 
     # 벽으로 막혀 있지 않은 방향을 찾는다:
@@ -182,8 +182,8 @@ def askForPlayerMove(board, robots, playerPosition):
 
 
 def moveRobots(board, robotPositions, playerPosition):
-    """Return a list of (x, y) tuples of new robot positions after they
-    have tried to move toward the player."""
+    """플레이어를 향해 이동한 로봇의 새로운 위치에 대한
+    (x, y) 튜플 리스트를 반환한다."""
     playerx, playery = playerPosition
     nextRobotPositions = []
 

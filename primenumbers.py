@@ -33,7 +33,7 @@ def main():
 
 
 def isPrime(number):
-    """Returns True if number is prime, otherwise returns False."""
+    """숫자가 소수이면 True를 반환하고, 그렇지 않으면 False를 반환한다."""
     # 특별한 경우에 대한 처리:
     if number < 2:
         return False

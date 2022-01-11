@@ -69,7 +69,7 @@ symbol in the plaintext and each symbol in the ciphertext.''')
 
 
 def checkKey(key):
-    """Return True if key is valid. Otherwise return False."""
+    """키가 유효하면 True를 반환하고, 그렇지 않으면 False를 반환한다."""
     keyList = list(key)
     lettersList = list(LETTERS)
     keyList.sort()
@@ -81,17 +81,17 @@ def checkKey(key):
 
 
 def encryptMessage(message, key):
-    """Encrypt the message using the key."""
+    """키를 이용하여 메시지를 암호화한다."""
     return translateMessage(message, key, 'encrypt')
 
 
 def decryptMessage(message, key):
-    """Decrypt the message using the key."""
+    """키를 이용하여 메시지를 복호화한다."""
     return translateMessage(message, key, 'decrypt')
 
 
 def translateMessage(message, key, mode):
-    """Encrypt or decrypt the message using the key."""
+    """키를 이용하여 메시지를 암호화/복호화한다."""
     translated = ''
     charsA = LETTERS
     charsB = key
@@ -117,7 +117,7 @@ def translateMessage(message, key, mode):
 
 
 def generateRandomKey():
-    """Generate and return a random encryption key."""
+    """임의의 암호화 키를 생성하여 반환한다."""
     key = list(LETTERS)  # LETTERS 문자열에서 리스트를 가져온다.
     random.shuffle(key)  # 리스트를 무작위로 섞는다.
     return ''.join(key)  # 리스트에서 문자열을 가져 온다.

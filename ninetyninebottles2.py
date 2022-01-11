@@ -14,7 +14,7 @@ LINE_PAUSE = 1.5  # 각 줄의 끝에 일시 중지한다.
 
 
 def slowPrint(text, pauseAmount=0.1):
-    """Slowly print out the characters in text one at a time."""
+    """텍스트의 문자를 한 번에 하나씩 천천히 출력한다."""
     for character in text:
         # 텍스트가 즉시 출력되도록 여기서 flush=True로 설정한다:
         print(character, flush=True, end='')  # end=''는 개행이 없다는 의미다.

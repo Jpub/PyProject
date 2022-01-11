@@ -52,10 +52,10 @@ to make four in a row horizontally, vertically, or diagonally.
 
 
 def getNewBoard():
-    """Returns a dictionary that represents a Four in a Row board.
+    """Four in a Row 보드를 나타내는 딕셔너리를 반환한다.
 
-    The keys are (columnIndex, rowIndex) tuples of two integers, and the
-    values are one of the 'X', 'O' or '.' (empty space) strings."""
+    키는 두 개의 정수인 (columnIndex, rowIndex) 튜플이며,
+    값은 'X', 'O' 또는 '.'(빈 공간) 문자열 중 하나다."""
     board = {}
     for columnIndex in range(BOARD_WIDTH):
         for rowIndex in range(BOARD_HEIGHT):
@@ -64,11 +64,11 @@ def getNewBoard():
 
 
 def displayBoard(board):
-    """Display the board and its tiles on the screen."""
+    """보드와 타일을 화면에 표시한다."""
 
-    '''Prepare a list to pass to the format() string method for the
-    board template. The list holds all of the board's tiles (and empty
-    spaces) going left to right, top to bottom:'''
+    '''보드 템플릿의 format() 문자열 메서드에 전달할 리스트를 준비한다.
+    리스트에는 왼쪽에서 오른쪽으로, 그리고
+    위에서 아래로 이동하는 보드의 모든 타일(및 빈 공간)이 있다.'''
     tileChars = []
     for rowIndex in range(BOARD_HEIGHT):
         for columnIndex in range(BOARD_WIDTH):
@@ -88,9 +88,9 @@ def displayBoard(board):
 
 
 def askForPlayerMove(playerTile, board):
-    """Let a player select a column on the board to drop a tile into.
+    """플레이어가 타일을 놓을 보드의 열을 선택하게 한다.
 
-    Returns a tuple of the (column, row) that the tile falls into."""
+    타일이 놓이는 (열, 행) 튜플을 반환한다."""
     while True:  # 유효한 입력을 할 때까지 계속 물어 본다.
         print('Player {}, enter a column or QUIT:'.format(playerTile))
         response = input('> ').upper().strip()
@@ -117,8 +117,8 @@ def askForPlayerMove(playerTile, board):
 
 
 def isFull(board):
-    """Returns True if the `board` has no empty spaces, otherwise
-    returns False."""
+    """보드에 빈 공간이 없다면 True를 반환하고,
+    그렇지 않으면 False를 반환한다."""
     for rowIndex in range(BOARD_HEIGHT):
         for columnIndex in range(BOARD_WIDTH):
             if board[(columnIndex, rowIndex)] == EMPTY_SPACE:
@@ -127,8 +127,8 @@ def isFull(board):
 
 
 def isWinner(playerTile, board):
-    """Returns True if `playerTile` has four tiles in a row on `board`,
-    otherwise returns False."""
+    """playerTile'이 'board'에 연속으로 4개의 타일을 가지고 있으면 True를 반환하고,
+     그렇지 않으면 False를 반환한다."""
 
     # 전체 보드에 대해 four-in-a-row을 검사한다:
     for columnIndex in range(BOARD_WIDTH - 3):

@@ -37,11 +37,11 @@ You lose if the board fills up the tiles before then.''')
 
 
 def getNewBoard():
-    """Returns a new data structure that represents a board.
+    """보드를 나타내는 새로운 데이터 구조를 반환한다.
 
-    It's a dictionary with keys of (x, y) tuples and values of the tile
-    at that space. The tile is either a power-of-two integer or BLANK.
-    The coordinates are laid out as:
+    (x, y) 튜플의 키와 해당 공간의 타일 값이 있는 딕셔너리다.
+    타일은 2의 제곱수 또는 공백이다.
+    좌표는 다음과 같다:
        X0 1 2 3
       Y+-+-+-+-+
       0| | | | |
@@ -72,7 +72,7 @@ def getNewBoard():
 
 
 def drawBoard(board):
-    """Draws the board data structure on the screen."""
+    """보드 데이터 구조를 화면에 그린다."""
 
     # 왼쪽에서 오른쪽으로, 위에서 아래로 각 칸에 대해 살펴보고,
     # 각 칸의 레이블에 대한 리스트를 생성한다.
@@ -107,7 +107,7 @@ def drawBoard(board):
 
 
 def getScore(board):
-    """Returns the sum of all the tiles on the board data structure."""
+    """보드 데이터 구조에 있는 모든 타일의 합계를 반환한다."""
     score = 0
     # 모든 공간에 대해 루프를 돌고 스코어에 타일을 더한다:
     for x in range(4):
@@ -119,10 +119,10 @@ def getScore(board):
 
 
 def combineTilesInColumn(column):
-    """The column is a list of four tile. Index 0 is the "bottom" of
-    the column, and tiles are pulled "down" and combine if they are the
-    same. For example, combineTilesInColumn([2, BLANK, 2, BLANK])
-    returns [4, BLANK, BLANK, BLANK]."""
+    """열은 4개의 타일 리스트다.
+    인덱스 0은 열의 '하단'이고 타일은 서로 동일한 경우에 합쳐진다.
+    예를 들어 CombineTilesInColumn([2, BLANK, 2, 공백])의 경우,
+    [4, 공백, 공백, 공백]을 반환한다."""
 
     # column의 값들 중에 공백이 아닌 숫자만 combinedTiles에 복사한다:
     combinedTiles = []  # column의 값들 중 공백이 아닌 타일들의 목록
@@ -146,13 +146,13 @@ def combineTilesInColumn(column):
 
 
 def makeMove(board, move):
-    """Carries out the move on the board.
+    """보드에서 이동을 수행한다.
 
-    The move argument is either 'W', 'A', 'S', or 'D' and the function
-    returns the resulting board data structure."""
+    이동 인수는 'W', 'A', 'S' 또는 'D'이고,
+    이 함수는 최종 보드 데이터 구조를 반환한다."""
 
     # 게임 보드는 이동하는 방향에 따라
-    # 네 개의 열로 나뉜다:
+    # 4개의 열로 나뉜다:
     if move == 'W':
         allColumnsSpaces = [[(0, 0), (0, 1), (0, 2), (0, 3)],
                             [(1, 0), (1, 1), (1, 2), (1, 3)],
@@ -203,9 +203,9 @@ def makeMove(board, move):
 
 
 def askForPlayerMove():
-    """Asks the player for the direction of their next move (or quit).
+    """플레이어에게 다음 이동 방향(또는 종료)을 묻는다.
 
-    Ensures they enter a valid move: either 'W', 'A', 'S' or 'D'."""
+    유효한 동작인 'W', 'A', 'S' 또는 'D' 중 하나를 입력했는지 확인한다."""
     print('Enter move: (WASD or Q to quit)')
     while True:  # 유효한 움직임이 입력될 때까지 루프를 계속 돈다.
         move = input('> ').upper()
@@ -222,7 +222,7 @@ def askForPlayerMove():
 
 
 def addTwoToBoard(board):
-    """Adds a new 2 tile randomly to the board."""
+    """보드에 새로운 타일 2개를 무작위로 추가한다."""
     while True:
         randomSpace = (random.randint(0, 3), random.randint(0, 3))
         if board[randomSpace] == BLANK:
@@ -231,7 +231,7 @@ def addTwoToBoard(board):
 
 
 def isFull(board):
-    """Returns True if the board data structure has no blanks."""
+    """보드 데이터 구조에 공백이 없으면 True를 반환한다."""
     # 보드의 모든 칸에 대해 루프를 돈다:
     for x in range(4):
         for y in range(4):

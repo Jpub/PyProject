@@ -22,7 +22,7 @@ for i in range(len(WORDS)):
 
 
 def main():
-    """Run a single game of Hacking."""
+    """해킹 게임을 실행한다."""
     print('''Hacking Minigame, by Al Sweigart al@inventwithpython.com
 Find the password in the computer's memory. You are given clues after
 each guess. For example, if the secret password is MONITOR but the
@@ -32,7 +32,7 @@ as their 2nd and 3rd letter. You get four guesses.\n''')
     input('Press Enter to begin...')
 
     gameWords = getWords()
-    # '컴퓨터 메모리'는 그냥 꾸미는 것이지만 멋져 보인다:
+    # '컴퓨터 메모리'는 그냥 꾸민 것이지만 멋져 보인다:
     computerMemory = getComputerMemoryString(gameWords)
     secretPassword = random.choice(gameWords)
 
@@ -50,11 +50,11 @@ as their 2nd and 3rd letter. You get four guesses.\n''')
 
 
 def getWords():
-    """Return a list of 12 words that could possibly be the password.
+    """암호가 될 수 있는 12단어의 리스트를 반환한다.
 
-    The secret password will be the first word in the list.
-    To make the game fair, we try to ensure that there are words with
-    a range of matching numbers of letters as the secret word."""
+    비밀 암호는 리스트의 첫 번째 단어가 될 것이다.
+    게임을 공정하게 만들기 위해, 일치하는 문자의 범위를 가진 단어가
+    비밀 단어로 사용되도록 한다."""
     secretPassword = random.choice(WORDS)
     words = [secretPassword]
 
@@ -95,7 +95,7 @@ def getWords():
 
 
 def getOneWordExcept(blocklist=None):
-    """Returns a random word from WORDS that isn't in blocklist."""
+    """blocklist에 없는 WORDS의 임의 단어를 반환한다."""
     if blocklist == None:
         blocklist = []
 
@@ -106,7 +106,7 @@ def getOneWordExcept(blocklist=None):
 
 
 def numMatchingLetters(word1, word2):
-    """Returns the number of matching letters in these two words."""
+    """이 두 단어에서 일치하는 문자의 수를 반환한다."""
     matches = 0
     for i in range(len(word1)):
         if word1[i] == word2[i]:
@@ -115,7 +115,7 @@ def numMatchingLetters(word1, word2):
 
 
 def getComputerMemoryString(words):
-    """Return a string representing the "computer memory"."""
+    """'컴퓨터 메모리'를 표현하는 문자열을 반환한다."""
 
     # 단어를 포함하기 위해 단어마다 한 줄을 사용한다.
     # 16개의 줄이 있지만 두 부분으로 나눈다.
@@ -163,7 +163,7 @@ def getComputerMemoryString(words):
 
 
 def askForPlayerGuess(words, tries):
-    """Let the player enter a password guess."""
+    """플레이어가 추측한 암호를 입력하게 한다."""
     while True:
         print('Enter password: ({} tries remaining)'.format(tries))
         guess = input('> ').upper()

@@ -118,8 +118,8 @@ def main():
 
 
 def drawHangman(missedLetters, correctLetters, secretWord):
-    """Draw the current state of the hangman, along with the missed and
-    correctly-guessed letters of the secret word."""
+    """비밀 단어에 대해 맞힌 글자와 틀린 글자와 함께
+    교수형 집행인의 현재 상태를 그린다."""
     print(HANGMAN_PICS[len(missedLetters)])
     print('The category is:', CATEGORY)
     print()
@@ -145,8 +145,8 @@ def drawHangman(missedLetters, correctLetters, secretWord):
 
 
 def getPlayerGuess(alreadyGuessed):
-    """Returns the letter the player entered. This function makes sure
-    the player entered a single letter they haven't guessed before."""
+    """플레이어가 입력한 문자를 반환한다. 
+    이 함수는 플레이어가 이전에 추측하지 않은 문자를 입력했는지 확인한다."""
     while True:  # 플레이어가 유효한 글자를 입력할 때까지 계속 요청한다.
         print('Guess a letter.')
         guess = input('> ').upper()

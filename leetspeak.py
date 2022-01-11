@@ -31,7 +31,7 @@ Enter your leet message:''')
 
 
 def englishToLeetspeak(message):
-    """Convert the English string in message and return leetspeak."""
+    """메시지에 있는 영어 문자열을 변환하여 리트 스피크를 반환한다."""
     # `charMapping`의 모든 키를 소문자로 한다.
     charMapping = {
     'a': ['4', '@', '/-\\'], 'c': ['('], 'd': ['|)'], 'e': ['3'],

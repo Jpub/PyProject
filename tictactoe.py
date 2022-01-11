@@ -38,7 +38,7 @@ def main():
 
 
 def getBlankBoard():
-    """Create a new, blank tic-tac-toe board."""
+    """비어 있는 새로운 틱-택-토 보드를 생성한다."""
     # 빈칸에 대한 번호: 1|2|3
     #                -+-+-
     #                4|5|6
@@ -52,7 +52,7 @@ def getBlankBoard():
 
 
 def getBoardStr(board):
-    """Return a text-representation of the board."""
+    """보드에 대한 텍스트를 반환한다."""
     return '''
       {}|{}|{}  1 2 3
       -+-+-
@@ -63,13 +63,13 @@ def getBoardStr(board):
                                 board['7'], board['8'], board['9'])
 
 def isValidSpace(board, space):
-    """Returns True if the space on the board is a valid space number
-    and the space is blank."""
+    """보드의 공백이 유효한 공백 번호고 비어 있다면
+    True를 반환한다."""
     return space in ALL_SPACES and board[space] == BLANK
 
 
 def isWinner(board, player):
-    """Return True if player is a winner on this TTTBoard."""
+    """플레이어가 TTT 보드의 승자라면 True를 반환한다."""
     # 가독성을 위해 여기에 사용된 짧은 변수 이름:
     b, p = board, player
     # 행 3개, 열 3개, 대각선 2개에 걸쳐 표시가 있는지 확인한다.
@@ -83,7 +83,7 @@ def isWinner(board, player):
             (b['1'] == b['5'] == b['9'] == p))    # 대각선
 
 def isBoardFull(board):
-    """Return True if every space on the board has been taken."""
+    """보드의 모든 공간이 채워지면 True를 반환한다."""
     for space in ALL_SPACES:
         if board[space] == BLANK:
             return False  # 만약에 빈칸이 있다면 False를 반환한다.
@@ -91,7 +91,7 @@ def isBoardFull(board):
 
 
 def updateBoard(board, space, mark):
-    """Sets the space on the board to mark."""
+    """보드에 표시할 공간을 설정한다."""
     board[space] = mark
 
 

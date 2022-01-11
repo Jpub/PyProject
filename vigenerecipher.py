@@ -61,17 +61,17 @@ powerful enough to remain unbroken for centuries.''')
 
 
 def encryptMessage(message, key):
-    """Encrypt the message using the key."""
+    """키를 사용하여 메시지를 암호화한다."""
     return translateMessage(message, key, 'encrypt')
 
 
 def decryptMessage(message, key):
-    """Decrypt the message using the key."""
+    """키를 사용하여 메시지를 복호화한다."""
     return translateMessage(message, key, 'decrypt')
 
 
 def translateMessage(message, key, mode):
-    """Encrypt or decrypt the message using the key."""
+    """키를 사용하여 메시지를 암호화 또는 복호화한다."""
     translated = []  # 암호화/복호화된 메시지 문자열을 저장한다.
 
     keyIndex = 0
