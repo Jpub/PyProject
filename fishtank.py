@@ -264,7 +264,7 @@ def drawAquarium():
 
 
 def clearAquarium():
-    """Draw empty spaces over everything on the screen."""
+    """화면 전체에 빈 공백을 그린다."""
     global FISHES, BUBBLERS, BUBBLES, KELP
 
     # 공기 방울을 그린다:

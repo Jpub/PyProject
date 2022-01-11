@@ -48,7 +48,6 @@ def englishToSpongecase(message):
     return spongecase
 
 
-# 이 프로그램이 다른 프로그램에 임포트된 게 아니라면 게임이 실행된다
-:
+# 이 프로그램이 다른 프로그램에 임포트된 게 아니라면 게임이 실행된다:
 if __name__ == '__main__':
     main()
