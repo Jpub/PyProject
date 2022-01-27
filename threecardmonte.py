@@ -44,7 +44,7 @@ def displayCards(cards):
 
 
 def getRandomCard():
-    """퀸 하트가 아닌 임의의 카드를 반환한다."""
+    """하트 퀸이 아닌 임의의 카드를 반환한다."""
     while True:  # 하트 퀸이 아닌 카드를 갖을 때까지 카드를 만든다.
         rank = random.choice(list('23456789JQKA') + ['10'])
         suit = random.choice([HEARTS, DIAMONDS, SPADES, CLUBS])
